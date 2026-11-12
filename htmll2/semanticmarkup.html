@@ -3,25 +3,2871 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semantic  Markup</title>
+    <title>Radha Farms, Barsana | Pure A2 Milk, Makhan &amp; Vedic Bilona Ghee</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --forest: #173b2c;
+            --forest-dark: #0f291e;
+            --forest-light: #275d46;
+            --sage: #e8f0ea;
+            --gold: #c68b2c;
+            --gold-bright: #dfa53a;
+            --gold-soft: #f7ebd2;
+            --clay: #7f4f24;
+            --cream: #fbf8f1;
+            --cream-dark: #f0e8d7;
+            --white: #ffffff;
+            --text: #1f2722;
+            --text-muted: #58645d;
+            --border: #e3dac8;
+            --shadow-sm: 0 4px 14px rgba(23, 59, 44, 0.06);
+            --shadow-md: 0 14px 36px rgba(23, 59, 44, 0.1);
+            --shadow-lg: 0 24px 60px rgba(15, 41, 30, 0.16);
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--cream);
+            background-image:
+                radial-gradient(at 15% 10%, rgba(198, 139, 44, 0.07) 0px, transparent 50%),
+                radial-gradient(at 85% 30%, rgba(23, 59, 44, 0.05) 0px, transparent 50%);
+            color: var(--text);
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .brand-title, .serif {
+            font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+            color: var(--forest);
+            letter-spacing: -0.01em;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        /* Announcement Ticker */
+        .top-bar {
+            background: linear-gradient(90deg, var(--forest-dark), var(--forest), var(--forest-dark));
+            color: var(--cream);
+            text-align: center;
+            padding: 0.5rem 1rem;
+            font-size: 0.84rem;
+            letter-spacing: 0.3px;
+            border-bottom: 1px solid rgba(223, 165, 58, 0.25);
+        }
+
+        .top-bar strong {
+            color: var(--gold-bright);
+        }
+
+        .promo-chip {
+            background: rgba(223, 165, 58, 0.18);
+            border: 1px dashed var(--gold-bright);
+            color: var(--gold-bright);
+            padding: 0.1rem 0.5rem;
+            border-radius: 6px;
+            font-weight: 700;
+            margin: 0 0.2rem;
+            cursor: pointer;
+        }
+
+        /* Semantic Header & Navigation */
+        header.site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(251, 248, 241, 0.94);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+            transition: box-shadow 0.25s ease;
+        }
+
+        header.site-header.scrolled {
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-container {
+            max-width: 1220px;
+            margin: 0 auto;
+            padding: 0.8rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .brand-mark {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--forest), var(--forest-dark));
+            color: var(--gold-bright);
+            display: grid;
+            place-items: center;
+            font-size: 1.35rem;
+            border: 2px solid var(--gold);
+            box-shadow: 0 4px 12px rgba(23, 59, 44, 0.2);
+            flex-shrink: 0;
+        }
+
+        .brand-text .brand-title {
+            font-size: 1.45rem;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            line-height: 1;
+            display: block;
+        }
+
+        .brand-text small {
+            font-size: 0.68rem;
+            color: var(--clay);
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.35rem;
+            align-items: center;
+        }
+
+        nav a {
+            font-weight: 600;
+            font-size: 0.89rem;
+            color: var(--text-muted);
+            position: relative;
+            padding: 0.25rem 0;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover,
+        nav a.active-link {
+            color: var(--forest);
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.25s ease;
+        }
+
+        nav a:hover::after,
+        nav a.active-link::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .cart-btn {
+            background: linear-gradient(135deg, var(--forest), var(--forest-light));
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.55rem 1.05rem;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 12px rgba(23, 59, 44, 0.18);
+            transition: transform 0.15s ease, box-shadow 0.2s ease;
+        }
+
+        .cart-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(23, 59, 44, 0.26);
+        }
+
+        .cart-count {
+            background: var(--gold-bright);
+            color: var(--forest-dark);
+            border-radius: 999px;
+            min-width: 22px;
+            height: 22px;
+            padding: 0 0.4rem;
+            display: inline-grid;
+            place-items: center;
+            font-size: 0.76rem;
+            font-weight: 800;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0.45rem 0.7rem;
+            font-size: 1.15rem;
+            color: var(--forest);
+            cursor: pointer;
+        }
+
+        /* Hero Showcase */
+        .hero {
+            max-width: 1220px;
+            margin: 1.5rem auto 0;
+            padding: 0 1.5rem;
+        }
+
+        .hero-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            align-items: stretch;
+        }
+
+        .hero-media {
+            position: relative;
+            min-height: 440px;
+            background: var(--cream-dark);
+            overflow: hidden;
+        }
+
+        .hero-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .hero-card:hover .hero-media img {
+            transform: scale(1.02);
+        }
+
+        .hero-floating-badge {
+            position: absolute;
+            bottom: 1.25rem;
+            left: 1.25rem;
+            background: rgba(15, 41, 30, 0.88);
+            backdrop-filter: blur(8px);
+            color: var(--cream);
+            padding: 0.6rem 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(223, 165, 58, 0.45);
+            font-size: 0.82rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-floating-badge strong {
+            color: var(--gold-bright);
+        }
+
+        .hero-content {
+            padding: 3rem 2.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(165deg, #ffffff 0%, #fcf6e8 100%);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            align-self: flex-start;
+            background: var(--sage);
+            color: var(--forest);
+            border: 1px solid #c5dccb;
+            padding: 0.35rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-bottom: 1.15rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .hero-content h1 {
+            font-size: 2.95rem;
+            line-height: 1.08;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content h1 em {
+            color: var(--clay);
+            font-style: italic;
+        }
+
+        .hero-content p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--forest), var(--forest-light));
+            color: var(--white);
+            padding: 0.85rem 1.6rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+            box-shadow: 0 6px 18px rgba(23, 59, 44, 0.18);
+            transition: transform 0.18s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(23, 59, 44, 0.24);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--forest);
+            padding: 0.85rem 1.45rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1.5px solid var(--forest);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--forest);
+            color: var(--white);
+        }
+
+        .hero-mini-trust {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-top: 1.25rem;
+            border-top: 1px dashed var(--border);
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* Trust Pillars */
+        .pillars {
+            max-width: 1220px;
+            margin: 2rem auto 0;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .pillar-item {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.15rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease;
+        }
+
+        .pillar-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .pillar-icon {
+            font-size: 1.65rem;
+            background: var(--gold-soft);
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+        }
+
+        .pillar-item h3 {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 0.94rem;
+            font-weight: 700;
+            margin-bottom: 0.15rem;
+        }
+
+        .pillar-item p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.35;
+        }
+
+        /* Generic Section Layout */
+        main section {
+            max-width: 1220px;
+            margin: 0 auto;
+            padding: 3.75rem 1.5rem;
+        }
+
+        .section-head {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .section-eyebrow {
+            color: var(--clay);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            display: inline-block;
+            background: var(--gold-soft);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+        }
+
+        .section-head h2 {
+            font-size: 2.35rem;
+            margin: 0.45rem 0 0.65rem;
+            line-height: 1.15;
+        }
+
+        .section-head p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Divine Heritage: Shri Radha Rani & Shri Krishna */
+        .divine-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .divine-card {
+            background: linear-gradient(165deg, #ffffff 0%, #fdf6e6 100%);
+            border: 1.5px solid #dfd0b2;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            display: grid;
+            grid-template-columns: 0.95fr 1.15fr;
+            align-items: stretch;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .divine-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .divine-frame {
+            position: relative;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--forest-dark), var(--forest));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .divine-frame img {
+            width: 100%;
+            height: 310px;
+            object-fit: cover;
+            object-position: top center;
+            border-radius: 16px;
+            border: 3px solid var(--gold-bright);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+        }
+
+        .divine-body {
+            padding: 1.85rem 1.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .divine-subtitle {
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--clay);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .divine-body h3 {
+            font-size: 1.85rem;
+            line-height: 1.1;
+            margin-bottom: 0.65rem;
+        }
+
+        .divine-body p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .divine-quote {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-style: italic;
+            font-size: 1.08rem;
+            color: var(--forest);
+            border-left: 3px solid var(--gold);
+            padding-left: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .about-story h3 {
+            font-size: 1.85rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .about-story p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-size: 0.98rem;
+        }
+
+        .values-list {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+            margin-top: 1.25rem;
+        }
+
+        .values-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            font-size: 0.94rem;
+            font-weight: 500;
+        }
+
+        .values-list li span {
+            color: var(--forest-light);
+            font-weight: 700;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .stat-box {
+            background: linear-gradient(145deg, var(--cream), var(--white));
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.6rem 1.25rem;
+            text-align: center;
+        }
+
+        .stat-box strong {
+            display: block;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 2.4rem;
+            color: var(--forest);
+            line-height: 1;
+            margin-bottom: 0.35rem;
+        }
+
+        .stat-box span {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* Vedic Bilona 4-Step Process */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+        }
+
+        .process-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 1.6rem 1.35rem;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .step-num {
+            position: absolute;
+            top: 1rem;
+            right: 1.15rem;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: rgba(198, 139, 44, 0.35);
+            line-height: 1;
+        }
+
+        .process-icon {
+            font-size: 2rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .process-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.45rem;
+        }
+
+        .process-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        /* Products Toolbar & Catalog */
+        .catalog-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+        }
+
+        .filter-btn {
+            background: var(--white);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.52rem 1.15rem;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.86rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--forest);
+            color: var(--white);
+            border-color: var(--forest);
+        }
+
+        .search-wrap {
+            position: relative;
+            min-width: 240px;
+            flex: 0 1 290px;
+        }
+
+        .search-wrap input {
+            width: 100%;
+            padding: 0.58rem 1rem 0.58rem 2.3rem;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .search-wrap input:focus {
+            outline: none;
+            border-color: var(--forest);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.85rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .product-visual {
+            height: 118px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--gold-soft) 100%);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 1.1rem;
+            font-size: 3.3rem;
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 0.7rem;
+            right: 0.7rem;
+            background: var(--white);
+            color: var(--clay);
+            border: 1px solid var(--border);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .product-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.6rem;
+        }
+
+        .product-unit {
+            font-size: 0.82rem;
+            color: var(--clay);
+            font-weight: 700;
+        }
+
+        .details-link {
+            background: none;
+            border: none;
+            color: var(--forest-light);
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .product-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+        }
+
+        .product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 1rem;
+            border-top: 1px solid var(--cream-dark);
+            gap: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--forest);
+        }
+
+        .add-btn {
+            background: var(--forest);
+            color: var(--white);
+            border: none;
+            padding: 0.55rem 1.05rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.86rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .add-btn:hover {
+            background: var(--forest-light);
+        }
+
+        .inline-qty {
+            display: inline-flex;
+            align-items: center;
+            background: var(--sage);
+            border: 1px solid #c5dccb;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .inline-qty button {
+            background: transparent;
+            border: none;
+            color: var(--forest);
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 0.38rem 0.7rem;
+            cursor: pointer;
+        }
+
+        .inline-qty button:hover {
+            background: rgba(23, 59, 44, 0.1);
+        }
+
+        .inline-qty span {
+            font-weight: 700;
+            font-size: 0.9rem;
+            min-width: 24px;
+            text-align: center;
+            color: var(--forest);
+        }
+
+        /* Gaushala Cows & Gau Seva */
+        .cows-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .cow-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 1.65rem;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .cow-head {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .cow-avatar {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: var(--gold-soft);
+            display: grid;
+            place-items: center;
+            font-size: 1.8rem;
+            border: 2px solid var(--gold);
+        }
+
+        .cow-head h3 {
+            font-size: 1.45rem;
+            line-height: 1.1;
+        }
+
+        .cow-head span {
+            font-size: 0.8rem;
+            color: var(--clay);
+            font-weight: 600;
+        }
+
+        .cow-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+        }
+
+        /* Daily Milk Subscription */
+        .subscribe-box {
+            background: linear-gradient(135deg, var(--forest) 0%, var(--forest-dark) 100%);
+            color: var(--white);
+            border-radius: 24px;
+            padding: 2.75rem;
+            display: grid;
+            grid-template-columns: 1.08fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .subscribe-box h2,
+        .subscribe-box h3 {
+            color: var(--white);
+        }
+
+        .subscribe-box h2 {
+            font-size: 2.3rem;
+            line-height: 1.12;
+            margin-top: 0.5rem;
+        }
+
+        .subscribe-box p {
+            color: #d7e6de;
+            margin: 0.85rem 0 1.25rem;
+        }
+
+        .sub-form {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 18px;
+            padding: 1.65rem;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .sub-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.85rem;
+        }
+
+        .sub-field label {
+            display: block;
+            font-size: 0.78rem;
+            color: var(--gold-bright);
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .sub-field select,
+        .sub-field input {
+            width: 100%;
+            padding: 0.65rem 0.8rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(15, 41, 30, 0.92);
+            color: var(--white);
+            font-size: 0.9rem;
+        }
+
+        .sub-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 0.9rem 1.05rem;
+            border-radius: 12px;
+        }
+
+        .sub-summary strong {
+            color: var(--gold-bright);
+            font-size: 1.25rem;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+            color: var(--forest-dark);
+            border: none;
+            padding: 0.8rem 1.3rem;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: transform 0.15s ease, filter 0.2s ease;
+        }
+
+        .btn-gold:hover {
+            filter: brightness(1.06);
+            transform: translateY(-1px);
+        }
+
+        /* Reviews */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.35rem;
+        }
+
+        .review-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.65rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stars {
+            color: var(--gold);
+            margin-bottom: 0.65rem;
+            font-size: 1.05rem;
+            letter-spacing: 2px;
+        }
+
+        .review-card p {
+            font-size: 0.94rem;
+            color: var(--text-muted);
+            margin-bottom: 1.15rem;
+            font-style: italic;
+        }
+
+        .reviewer {
+            font-weight: 700;
+            color: var(--forest);
+            font-size: 0.94rem;
+        }
+
+        .reviewer span {
+            display: block;
+            font-weight: 500;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* FAQ Accordion */
+        .faq-list {
+            max-width: 820px;
+            margin: 0 auto;
+            display: grid;
+            gap: 0.85rem;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .faq-q {
+            width: 100%;
+            text-align: left;
+            background: transparent;
+            border: none;
+            padding: 1.15rem 1.35rem;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--forest);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .faq-q span.icon {
+            font-size: 1.25rem;
+            color: var(--gold);
+            transition: transform 0.25s ease;
+        }
+
+        .faq-item.open .faq-q span.icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-a p {
+            padding: 0 1.35rem 1.2rem;
+            color: var(--text-muted);
+            font-size: 0.93rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.25fr;
+            gap: 2rem;
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 1rem;
+            align-content: start;
+        }
+
+        .info-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.25rem 1.35rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .info-icon {
+            font-size: 1.45rem;
+            background: var(--gold-soft);
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+        }
+
+        .info-card h3 {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .info-card p,
+        .info-card a {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .info-card a:hover {
+            color: var(--forest);
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            display: grid;
+            gap: 1rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: var(--forest);
+            margin-bottom: 0.35rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.72rem 0.9rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 0.94rem;
+            background: var(--cream);
+            color: var(--text);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--forest);
+            background: var(--white);
+        }
+
+        .feedback-msg {
+            display: none;
+            padding: 0.85rem 1rem;
+            border-radius: 10px;
+            background: var(--sage);
+            color: var(--forest);
+            border: 1px solid #b5d8c2;
+            font-weight: 600;
+            font-size: 0.88rem;
+        }
+
+        /* Semantic Footer */
+        footer.site-footer {
+            background: var(--forest-dark);
+            color: #d8e7df;
+            padding: 3.5rem 1.5rem 1.75rem;
+            margin-top: 2rem;
+        }
+
+        .footer-inner {
+            max-width: 1220px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 2rem;
+            padding-bottom: 2.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .footer-inner h3 {
+            color: var(--gold-bright);
+            font-size: 1.25rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: grid;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-bright);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            min-width: 0;
+            padding: 0.6rem 0.85rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            max-width: 1220px;
+            margin: 1.5rem auto 0;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            font-size: 0.84rem;
+            color: #9cb8a9;
+        }
+
+        /* Modals & Cart Drawer */
+        .backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 41, 30, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 200;
+            display: none;
+        }
+
+        .backdrop.open {
+            display: flex;
+        }
+
+        .cart-backdrop {
+            justify-content: flex-end;
+        }
+
+        .modal-backdrop {
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .cart-drawer {
+            width: 100%;
+            max-width: 440px;
+            background: var(--cream);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -10px 0 35px rgba(0, 0, 0, 0.22);
+        }
+
+        .cart-header {
+            padding: 1.2rem 1.5rem;
+            background: var(--forest);
+            color: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-header h3 {
+            color: var(--white);
+            font-size: 1.45rem;
+        }
+
+        .close-btn {
+            background: transparent;
+            border: none;
+            color: var(--white);
+            font-size: 1.6rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .cart-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.25rem 1.5rem;
+        }
+
+        .cart-item {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 0.85rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .cart-item-info strong {
+            display: block;
+            color: var(--forest);
+            font-size: 0.94rem;
+        }
+
+        .cart-item-info span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .qty-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .qty-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background: var(--cream);
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .promo-box {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .promo-box input {
+            flex: 1;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .promo-box button {
+            padding: 0.5rem 0.9rem;
+            border-radius: 8px;
+            border: none;
+            background: var(--clay);
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.82rem;
+            cursor: pointer;
+        }
+
+        .cart-footer {
+            padding: 1.25rem 1.5rem;
+            background: var(--white);
+            border-top: 1px solid var(--border);
+        }
+
+        .summary-line {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.88rem;
+            margin-bottom: 0.35rem;
+            color: var(--text-muted);
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--forest);
+            margin: 0.6rem 0 0.9rem;
+            padding-top: 0.6rem;
+            border-top: 1px dashed var(--border);
+        }
+
+        .checkout-form {
+            display: none;
+            gap: 0.65rem;
+            margin-top: 0.9rem;
+            padding-top: 0.9rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .checkout-form.show {
+            display: grid;
+        }
+
+        .checkout-form input,
+        .checkout-form select {
+            padding: 0.6rem 0.75rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-size: 0.88rem;
+            font-family: inherit;
+        }
+
+        /* Product Detail / Order Receipt Modal */
+        .modal-card {
+            background: var(--white);
+            border-radius: 20px;
+            max-width: 480px;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+        }
+
+        .modal-head {
+            background: var(--forest);
+            color: var(--white);
+            padding: 1.15rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-head h3 {
+            color: var(--white);
+            font-size: 1.45rem;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .spec-list {
+            list-style: none;
+            margin: 1rem 0;
+            display: grid;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .spec-list li {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        /* Floating Back to Top */
+        .back-top {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--forest);
+            color: var(--gold-bright);
+            border: 1.5px solid var(--gold);
+            display: none;
+            place-items: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            z-index: 90;
+            font-size: 1.1rem;
+        }
+
+        .back-top.show {
+            display: grid;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            background: var(--forest-dark);
+            color: var(--white);
+            padding: 0.8rem 1.3rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold-bright);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+            font-size: 0.9rem;
+            font-weight: 500;
+            z-index: 300;
+            opacity: 0;
+            transform: translateY(15px);
+            pointer-events: none;
+            transition: all 0.25s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1020px) {
+            .divine-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 980px) {
+            .hero-card,
+            .about-grid,
+            .subscribe-box,
+            .contact-grid,
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .pillars,
+            .process-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .cows-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 740px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--cream);
+                flex-direction: column;
+                padding: 1rem 1.5rem;
+                border-bottom: 1px solid var(--border);
+                gap: 0.85rem;
+                box-shadow: var(--shadow-md);
+            }
+
+            nav ul.open {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: inline-block;
+            }
+
+            .divine-card {
+                grid-template-columns: 1fr;
+            }
+
+            .divine-frame img {
+                height: 280px;
+            }
+
+            .pillars,
+            .process-grid,
+            .form-row,
+            .sub-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>RADHA FARMS
-        <nav>
-            <ul>
-                <li><a href="/About">About</a></li>
-                <li><a href="/Products">Products</a></li>
-                <li><a href="/ContactUs">ContactUs</a></li>
-            </ul>
-        </nav>
 
+    <div class="top-bar">
+        Radhe Radhe &bull; Morning Glass-Bottle Delivery from Barsana &bull; Use code
+        <button type="button" class="promo-chip" id="copyPromoBtn" title="Click to apply BARSANA10 in cart">BARSANA10</button>
+        for <strong>10% Off</strong>
+    </div>
 
+    <!-- Semantic Header & Navigation -->
+    <header class="site-header" id="siteHeader">
+        <div class="nav-container">
+            <a href="#home" class="brand">
+                <div class="brand-mark" aria-hidden="true">&#129718;</div>
+                <div class="brand-text">
+                    <span class="brand-title">RADHA FARMS</span>
+                    <small>Barsana &bull; Pure &amp; Natural</small>
+                </div>
+            </a>
+
+            <nav aria-label="Main Navigation">
+                <ul id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#divine-heritage" class="nav-link">Shri Radha &amp; Krishna</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="#gaushala" class="nav-link">Gaushala</a></li>
+                    <li><a href="#subscribe" class="nav-link">Daily Milk</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button type="button" class="cart-btn" id="openCartBtn" aria-label="Open shopping cart">
+                    &#128722; Basket <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">&#9776;</button>
+            </div>
+        </div>
     </header>
-    <main>
 
-        <img src="Radhafarms.png" alt="Radhafarms">
-        
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-card">
+                <div class="hero-media">
+                    <img src="Radhafarms.png" alt="Radha Farms Barsana — Pure Milk, Pure Love with indigenous Gir cows and clay pot">
+                    <div class="hero-floating-badge">
+                        <span>&#10004;</span>
+                        <span><strong>Lab-Verified A2</strong> &bull; Blessed in Barsana</span>
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <span class="hero-badge">&#127807; A Unit of Tradition, Trust &amp; Purity</span>
+                    <h1>Pure Milk. <em>Pure Love.</em><br>From Barsana, With Care.</h1>
+                    <p>
+                        Inspired by the sacred pastures of Shri Radha Rani &amp; Bal Shri Krishna.
+                        Ethically raised Gir &amp; Sahiwal cows, raw A2 glass-bottle milk, fresh white makhan, and Vedic Bilona ghee delivered before sunrise.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#products" class="btn-primary">Shop Farm Fresh &rarr;</a>
+                        <a href="#subscribe" class="btn-secondary">Daily Milk Plan</a>
+                    </div>
+                    <div class="hero-mini-trust">
+                        <span>&#128004; Calf-First Ahimsa</span>
+                        <span>&#129371; Zero Preservatives</span>
+                        <span>&#127749; 6 AM Delivery</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Pillars -->
+        <aside class="pillars" aria-label="Farm Purity Highlights">
+            <div class="pillar-item">
+                <div class="pillar-icon">&#128004;</div>
+                <div>
+                    <h3>100% A2 Desi Breeds</h3>
+                    <p>Pure Gir &amp; Sahiwal cows, zero crossbreeding</p>
+                </div>
+            </div>
+            <div class="pillar-item">
+                <div class="pillar-icon">&#129371;</div>
+                <div>
+                    <h3>28 Quality Checks</h3>
+                    <p>Daily tested for purity, antibiotics &amp; hormones</p>
+                </div>
+            </div>
+            <div class="pillar-item">
+                <div class="pillar-icon">&#127994;</div>
+                <div>
+                    <h3>Earthen Pot Tradition</h3>
+                    <p>Cultured in natural clay matkas for gut health</p>
+                </div>
+            </div>
+            <div class="pillar-item">
+                <div class="pillar-icon">&#128256;</div>
+                <div>
+                    <h3>Reusable Glass Bottles</h3>
+                    <p>Sanitized eco-packaging, zero microplastics</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Divine Inspiration: Shri Radha Rani & Shri Krishna -->
+        <section id="divine-heritage" class="reveal">
+            <div class="section-head">
+                <span class="section-eyebrow">Our Sacred Inspiration</span>
+                <h2>Guided by Shri Radha Rani &amp; Shri Krishna</h2>
+                <p>Radha Farms is rooted in the eternal grace of Barsana Dham and the divine Braj legacy of Gau Seva &amp; pure Makhan.</p>
+            </div>
+
+            <div class="divine-grid">
+                <article class="divine-card">
+                    <div class="divine-frame">
+                        <img src="radharani.jpeg" alt="Shri Radha Rani — Presiding Grace of Barsana Dham">
+                    </div>
+                    <div class="divine-body">
+                        <div>
+                            <span class="divine-subtitle">Barsana Dham &bull; Karuna &amp; Grace</span>
+                            <h3>Shri Radha Rani</h3>
+                            <p>
+                                As the heart of Barsana, Kishori Ji embodies unconditional compassion (<em>Karuna</em>) and purity. Her presence inspires our gentle <em>Ahimsa</em> dairy, where every cow and calf is treated with love and dignity.
+                            </p>
+                            <blockquote class="divine-quote">
+                                "Where purity meets devotion, every drop becomes prasad."
+                            </blockquote>
+                        </div>
+                        <button type="button" class="btn-secondary" onclick="addToCart('barsana-peda')">
+                            &#127852; Order Barsana Khoya Peda
+                        </button>
+                    </div>
+                </article>
+
+                <article class="divine-card">
+                    <div class="divine-frame">
+                        <img src="krishna.jpeg" alt="Bal Shri Krishna — Gopala and Makhan Chor of Braj">
+                    </div>
+                    <div class="divine-body">
+                        <div>
+                            <span class="divine-subtitle">Gopala &bull; Makhan Chor of Braj</span>
+                            <h3>Bal Shri Krishna</h3>
+                            <p>
+                                From tending herds in Braj’s green groves to relishing freshly churned matka makhan, Kanha’s love for cows and dairy shapes our Vedic Bilona craft—preserving wholesome taste fit for daily Bhog.
+                            </p>
+                            <blockquote class="divine-quote">
+                                "Pure A2 milk and hand-churned makhan—crafted with Kanha’s joy."
+                            </blockquote>
+                        </div>
+                        <button type="button" class="btn-primary" onclick="addToCart('white-makhan')">
+                            &#129480; Order Fresh White Makhan
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="reveal">
+            <div class="section-head">
+                <span class="section-eyebrow">Our Sacred Heritage</span>
+                <h2>Rooted in Barsana’s Gaushala Tradition</h2>
+                <p>Every drop at Radha Farms begins with reverence for Gau Mata, open pastures, and unhurried Vedic farming.</p>
+            </div>
+
+            <div class="about-grid">
+                <article class="about-story">
+                    <h3>Calf First. Tradition Always.</h3>
+                    <p>
+                        Nestled near the holy hills of Barsana, Radha Farms is a sanctuary where indigenous Indian cows graze on mineral-rich green fodder, neem, and tulsi—never factory-fed or tied in cramped sheds.
+                    </p>
+                    <p>
+                        We strictly practice <em>Ahimsa</em> milking: calves always drink their full mother’s share first. Only the remaining surplus milk is chilled to 4&deg;C and bottled in sanitized glass within 3 hours.
+                    </p>
+                    <ul class="values-list">
+                        <li><span>&#10004;</span> 30 Litres of A2 curd churned to craft 1 Litre of Vedic Bilona Ghee</li>
+                        <li><span>&#10004;</span> Zero oxytocin, synthetic hormones, or milk powders</li>
+                        <li><span>&#10004;</span> Transparent QR batch traceability on every bottle</li>
+                    </ul>
+                </article>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <strong>120+</strong>
+                        <span>Indigenous Gir &amp; Sahiwal Cows</span>
+                    </div>
+                    <div class="stat-box">
+                        <strong>100%</strong>
+                        <span>Organic &amp; Herbal Fodder</span>
+                    </div>
+                    <div class="stat-box">
+                        <strong>3 Hrs</strong>
+                        <span>Milking to Doorstep Time</span>
+                    </div>
+                    <div class="stat-box">
+                        <strong>1,400+</strong>
+                        <span>Families Served Every Dawn</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vedic Bilona Process -->
+        <section id="process" class="reveal">
+            <div class="section-head">
+                <span class="section-eyebrow">Crafted By Hand</span>
+                <h2>The 4-Step Vedic Bilona Method</h2>
+                <p>Unlike commercial cream-separated butter, our ghee follows the authentic Ayurvedic path.</p>
+            </div>
+
+            <div class="process-grid">
+                <article class="process-card">
+                    <span class="step-num">01</span>
+                    <div class="process-icon">&#127793;</div>
+                    <h3>Ahimsa Milking</h3>
+                    <p>Morning milking begins at 4:30 AM after calves drink freely from their mothers.</p>
+                </article>
+                <article class="process-card">
+                    <span class="step-num">02</span>
+                    <div class="process-icon">&#127994;</div>
+                    <h3>Matka Curding</h3>
+                    <p>Slow-boiled A2 milk is cultured overnight in porous earthen clay pots with live starters.</p>
+                </article>
+                <article class="process-card">
+                    <span class="step-num">03</span>
+                    <div class="process-icon">&#129480;</div>
+                    <h3>Bilona Churning</h3>
+                    <p>Whole curd is churned back-and-forth with a wooden mathani during early Brahma Muhurta.</p>
+                </article>
+                <article class="process-card">
+                    <span class="step-num">04</span>
+                    <div class="process-icon">&#128293;</div>
+                    <h3>Slow Simmering</h3>
+                    <p>Pure white makhan is simmered over gentle flame into golden danedar Bilona ghee.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="reveal">
+            <div class="section-head">
+                <span class="section-eyebrow">Farm Fresh Catalog</span>
+                <h2>Wholesome Dairy &amp; Barsana Delicacies</h2>
+                <p>Prepared fresh daily in small batches. Search or filter below to build your basket.</p>
+            </div>
+
+            <div class="catalog-toolbar">
+                <div class="filter-tabs" role="tablist" aria-label="Product Categories">
+                    <button type="button" class="filter-btn active" data-category="all">All Products</button>
+                    <button type="button" class="filter-btn" data-category="milk">Milk &amp; Curd</button>
+                    <button type="button" class="filter-btn" data-category="ghee">Bilona Ghee &amp; Butter</button>
+                    <button type="button" class="filter-btn" data-category="sweets">Paneer &amp; Sweets</button>
+                    <button type="button" class="filter-btn" data-category="seva">Gau Seva</button>
+                </div>
+                <div class="search-wrap">
+                    <span class="search-icon" aria-hidden="true">&#128269;</span>
+                    <input type="search" id="productSearch" placeholder="Search milk, ghee, peda..." aria-label="Search products">
+                </div>
+            </div>
+
+            <div class="products-grid" id="productsGrid"></div>
+        </section>
+
+        <!-- Gaushala Cows & Gau Seva -->
+        <section id="gaushala" class="reveal">
+            <div class="section-head">
+                <span class="section-eyebrow">Meet Our Gaushala</span>
+                <h2>The Sacred Mothers of Radha Farms</h2>
+                <p>Every cow in our Barsana sanctuary has a name, a dedicated caretaker, and lifelong care—even after milking years.</p>
+            </div>
+
+            <div class="cows-grid">
+                <article class="cow-card">
+                    <div>
+                        <div class="cow-head">
+                            <div class="cow-avatar">&#128004;</div>
+                            <div>
+                                <h3>Nandini</h3>
+                                <span>Pure Gir &bull; Age 5 Years</span>
+                            </div>
+                        </div>
+                        <p>Gentle leader of our morning pasture herd. Known for her rich, golden-hued A2 milk high in beta-carotene.</p>
+                    </div>
+                    <button type="button" class="btn-secondary" style="width: 100%;" onclick="addToCart('gau-seva-fodder')">
+                        &#127806; Sponsor Green Fodder (&#8377;251)
+                    </button>
+                </article>
+
+                <article class="cow-card">
+                    <div>
+                        <div class="cow-head">
+                            <div class="cow-avatar">&#128046;</div>
+                            <div>
+                                <h3>Surabhi</h3>
+                                <span>Sahiwal &bull; Mother of Gopal</span>
+                            </div>
+                        </div>
+                        <p>Loves fresh tulsi leaves and evening bhajans played in the Gaushala courtyard. Calm, affectionate, and playful.</p>
+                    </div>
+                    <button type="button" class="btn-secondary" style="width: 100%;" onclick="addToCart('gau-seva-fodder')">
+                        &#127806; Sponsor Green Fodder (&#8377;251)
+                    </button>
+                </article>
+
+                <article class="cow-card">
+                    <div>
+                        <div class="cow-head">
+                            <div class="cow-avatar">&#128002;</div>
+                            <div>
+                                <h3>Kamdhenu</h3>
+                                <span>Senior Gir &bull; Retired Elder</span>
+                            </div>
+                        </div>
+                        <p>At 14 years young, Kamdhenu enjoys peaceful sunlit retirement and herbal massages, supported by our Gau Seva fund.</p>
+                    </div>
+                    <button type="button" class="btn-secondary" style="width: 100%;" onclick="addToCart('gau-seva-care')">
+                        &#128154; Support Elder Care (&#8377;501)
+                    </button>
+                </article>
+            </div>
+        </section>
+
+        <!-- Daily Milk Subscription Calculator -->
+        <section id="subscribe" class="reveal">
+            <div class="subscribe-box">
+                <div>
+                    <span class="section-eyebrow" style="background: rgba(223,165,58,0.2); color: var(--gold-bright);">Morning Milk Club</span>
+                    <h2>Subscribe for Daily 6 AM Delivery</h2>
+                    <p>
+                        Never run out of pure A2 milk. Choose your daily quantity and delivery rhythm, pause anytime when travelling, and receive sanitized glass bottles at your doorstep.
+                    </p>
+                    <ul class="values-list" style="color: #e2eee7;">
+                        <li><span style="color: var(--gold-bright);">&#10004;</span> Flat 10% subscriber savings over single-bottle orders</li>
+                        <li><span style="color: var(--gold-bright);">&#10004;</span> Complimentary insulated morning milk pouch</li>
+                        <li><span style="color: var(--gold-bright);">&#10004;</span> Instant pause/resume via WhatsApp before 9 PM</li>
+                    </ul>
+                </div>
+
+                <form class="sub-form" id="subscriptionForm">
+                    <div class="sub-row">
+                        <div class="sub-field">
+                            <label for="subQty">Daily Quantity</label>
+                            <select id="subQty">
+                                <option value="0.5">500 ml (&#8377;45/day)</option>
+                                <option value="1" selected>1 Litre (&#8377;85/day)</option>
+                                <option value="1.5">1.5 Litres (&#8377;125/day)</option>
+                                <option value="2">2 Litres (&#8377;165/day)</option>
+                            </select>
+                        </div>
+                        <div class="sub-field">
+                            <label for="subFreq">Schedule</label>
+                            <select id="subFreq">
+                                <option value="30" selected>Every Day (30 days)</option>
+                                <option value="15">Alternate Days (15 days)</option>
+                                <option value="22">Weekdays Only (22 days)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="sub-row">
+                        <div class="sub-field">
+                            <label for="subName">Your Name</label>
+                            <input type="text" id="subName" placeholder="Full Name" required>
+                        </div>
+                        <div class="sub-field">
+                            <label for="subPhone">Mobile Number</label>
+                            <input type="tel" id="subPhone" placeholder="10-digit mobile" pattern="[0-9]{10}" required>
+                        </div>
+                    </div>
+
+                    <div class="sub-summary">
+                        <span>Estimated Monthly Plan:</span>
+                        <strong id="subTotal">&#8377;2,550 / mo</strong>
+                    </div>
+
+                    <button type="submit" class="btn-gold">Start My Milk Subscription</button>
+                    <div class="feedback-msg" id="subFeedback"></div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Reviews -->
+        <section id="reviews" class="reveal">
+            <div class="section-head">
+                <span class="section-eyebrow">Community Love</span>
+                <h2>Trusted by Families Across Braj &amp; NCR</h2>
+            </div>
+
+            <div class="reviews-grid">
+                <article class="review-card">
+                    <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"The aroma of Radha Farms Bilona Ghee reminds me of my grandmother's kitchen. You can truly taste the purity in every golden grain."</p>
+                    <div class="reviewer">Meera Sharma <span>Mathura &bull; Daily Subscriber</span></div>
+                </article>
+                <article class="review-card">
+                    <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Glass bottle delivery arrives right before 6:30 AM. My kids love the fresh A2 milk and the matka dahi is thick and naturally sweet."</p>
+                    <div class="reviewer">Rajeshwar Gupta <span>Faridabad &bull; Member since 2024</span></div>
+                </article>
+                <article class="review-card">
+                    <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Visited the Barsana farm with my family last month. Seeing how lovingly the cows and calves are treated gave us complete peace of mind."</p>
+                    <div class="reviewer">Ananya Joshi <span>Vrindavan &bull; Farm Visitor</span></div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ Accordion -->
+        <section id="faq" class="reveal">
+            <div class="section-head">
+                <span class="section-eyebrow">Good To Know</span>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button type="button" class="faq-q">
+                        What makes A2 Desi Cow Milk different from regular milk?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-a">
+                        <p>Indigenous breeds like Gir and Sahiwal naturally produce milk with only the A2 beta-casein protein, which is gentler on digestion and avoids the inflammatory BCM-7 peptide associated with A1 crossbred cow milk.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-q">
+                        How do reusable glass bottles work for morning delivery?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-a">
+                        <p>Simply rinse your empty glass bottle and place it in your Radha Farms pouch outside your door at night. Our delivery rider collects the empty bottle and replaces it with a fresh, sanitized sealed bottle at 6 AM.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-q">
+                        How is your Bilona Ghee made and how should I store it?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-a">
+                        <p>We culture whole A2 milk into clay-pot curd, churn it with a wooden mathani to extract white makhan, and slow-simmer it into ghee. Store it in a cool, dry place away from moisture; it stays fresh for up to 12 months.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-q">
+                        Can visitors come to the Barsana farm &amp; Gaushala?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-a">
+                        <p>Yes! Families and devotees are welcome every Saturday and Sunday between 7:00 AM and 11:00 AM. Use the contact form below to book your visit slot so our farm caretaker can welcome you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Farm Visit Section -->
+        <section id="contact" class="reveal">
+            <div class="section-head">
+                <span class="section-eyebrow">Connect With Us</span>
+                <h2>Visit Radha Farms or Send an Inquiry</h2>
+                <p>Experience the peace of our Barsana Gaushala or reach out for custom &amp; temple orders.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">&#128205;</div>
+                        <div>
+                            <h3>Barsana Farm &amp; Gaushala</h3>
+                            <p>Near Shriji Temple Road, Gehvar Van Marg, Barsana, Mathura, Uttar Pradesh - 281405</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">&#128222;</div>
+                        <div>
+                            <h3>Call or WhatsApp</h3>
+                            <a href="tel:+919156726068">+91 91567 26068</a>
+                            <p>Daily Support: 6:00 AM &ndash; 8:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">&#9993;&#65039;</div>
+                        <div>
+                            <h3>Email Us</h3>
+                            <a href="mailto:care@radhafarms.in">care@radhafarms.in</a>
+                            <p>Weekend Farm Visits: Sat &amp; Sun (7 AM &ndash; 11 AM)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cName">Your Name</label>
+                            <input type="text" id="cName" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cPhone">Phone Number</label>
+                            <input type="tel" id="cPhone" placeholder="Your mobile number" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cEmail">Email Address</label>
+                            <input type="email" id="cEmail" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cTopic">Inquiry Type</label>
+                            <select id="cTopic">
+                                <option value="Farm Visit Booking">Book a Barsana Farm Visit</option>
+                                <option value="Daily Milk Delivery">Daily Milk Delivery</option>
+                                <option value="Bulk / Temple Order">Bulk / Festive Order</option>
+                                <option value="Gau Seva Support">Gau Seva / Donation</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cMsg">Message</label>
+                        <textarea id="cMsg" rows="4" placeholder="Tell us your preferred date, delivery area, or questions..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                    <div class="feedback-msg" id="contactFeedback"></div>
+                </form>
+            </div>
+        </section>
     </main>
-    <footer>made with &hearts;</footer>
+
+    <!-- Semantic Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <h3>RADHA FARMS &bull; BARSANA</h3>
+                <p style="font-size: 0.9rem; color: #b7cec1;">
+                    Pure Milk. Pure Love. From Barsana, With Care.<br>
+                    Dedicated to Shri Radha Rani &amp; Shri Krishna through ethical A2 dairy farming and Gau Seva.
+                </p>
+            </div>
+            <div>
+                <h3>Explore</h3>
+                <ul class="footer-links">
+                    <li><a href="#divine-heritage">Shri Radha &amp; Krishna</a></li>
+                    <li><a href="#about">About Our Farm</a></li>
+                    <li><a href="#process">Vedic Bilona Process</a></li>
+                    <li><a href="#products">Fresh Dairy Catalog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#subscribe">Daily Milk Plan</a></li>
+                    <li><a href="#gaushala">Meet Our Cows</a></li>
+                    <li><a href="#faq">Common Questions</a></li>
+                    <li><a href="#contact">Book a Farm Visit</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Farm Updates</h3>
+                <p style="font-size: 0.86rem; color: #b7cec1;">Receive alerts for fresh winter Bilona ghee batches &amp; Barsana events.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" id="newsEmail" placeholder="Enter your email" required aria-label="Email for newsletter">
+                    <button type="submit" class="btn-gold" style="padding: 0.55rem 0.9rem;">Join</button>
+                </form>
+                <div id="newsFeedback" style="font-size: 0.82rem; color: var(--gold-bright); margin-top: 0.5rem;"></div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Radha Farms, Barsana. All rights reserved.</span>
+            <span>Made with &hearts; in Barsana by vinitumare</span>
+        </div>
+    </footer>
+
+    <!-- Floating Back to Top -->
+    <button type="button" class="back-top" id="backTopBtn" aria-label="Scroll back to top">&uarr;</button>
+
+    <!-- Slide-Over Shopping Cart Drawer -->
+    <div class="backdrop cart-backdrop" id="cartBackdrop" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+        <div class="cart-drawer">
+            <div class="cart-header">
+                <h3 id="cartTitle">Your Farm Basket</h3>
+                <button type="button" class="close-btn" id="closeCartBtn" aria-label="Close cart">&times;</button>
+            </div>
+            <div class="cart-body" id="cartItemsContainer"></div>
+            <div class="cart-footer">
+                <div class="promo-box" id="promoBox">
+                    <input type="text" id="promoInput" placeholder="Promo code (try BARSANA10)" aria-label="Promo code">
+                    <button type="button" id="applyPromoBtn">Apply</button>
+                </div>
+
+                <div class="summary-line">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal">&#8377;0</span>
+                </div>
+                <div class="summary-line" id="discountRow" style="display: none; color: var(--forest); font-weight: 600;">
+                    <span>Discount (<span id="promoNameLabel"></span>)</span>
+                    <span id="cartDiscount">-&#8377;0</span>
+                </div>
+                <div class="summary-line">
+                    <span>Chilled Morning Delivery</span>
+                    <span id="cartDelivery">&#8377;0</span>
+                </div>
+                <div class="summary-total">
+                    <span>Total</span>
+                    <span id="cartTotal">&#8377;0</span>
+                </div>
+
+                <button type="button" class="btn-primary" style="width: 100%;" id="proceedCheckoutBtn">
+                    Proceed to Checkout
+                </button>
+
+                <form class="checkout-form" id="checkoutForm">
+                    <input type="text" id="chkName" placeholder="Recipient Full Name" required>
+                    <input type="tel" id="chkPhone" placeholder="Mobile Number (10 digits)" pattern="[0-9]{10}" required>
+                    <input type="text" id="chkAddr" placeholder="Complete Delivery Address &amp; Landmark" required>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                        <select id="chkSlot" aria-label="Delivery Slot">
+                            <option value="Morning (5:30 AM - 7:30 AM)">Morning (5:30 - 7:30 AM)</option>
+                            <option value="Evening (5:00 PM - 7:00 PM)">Evening (5:00 - 7:00 PM)</option>
+                        </select>
+                        <select id="chkPayment" aria-label="Payment Method">
+                            <option value="UPI on Delivery">UPI on Delivery</option>
+                            <option value="Cash on Delivery">Cash on Delivery</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-gold" style="width: 100%;">Confirm Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail / Order Receipt Modal -->
+    <div class="backdrop modal-backdrop" id="infoModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="infoModalTitle">
+        <div class="modal-card">
+            <div class="modal-head">
+                <h3 id="infoModalTitle">Details</h3>
+                <button type="button" class="close-btn" id="closeInfoModalBtn" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body" id="infoModalBody"></div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script>
+        const PRODUCTS = [
+            {
+                id: "a2-milk",
+                name: "Fresh A2 Desi Cow Milk",
+                category: "milk",
+                unit: "1 Litre Glass Bottle",
+                price: 90,
+                badge: "Bestseller",
+                emoji: "🥛",
+                desc: "Raw, unprocessed, naturally sweet A2 milk from free-grazing Gir cows. Chilled & bottled within 3 hours.",
+                specs: {
+                    "Breed Source": "100% Pure Gir & Sahiwal",
+                    "Packaging": "Sanitized Reusable Glass Bottle",
+                    "Shelf Life": "48 Hours Refrigerated at 4°C",
+                    "Key Nutrients": "A2 Beta-Casein, Vitamin D, Calcium"
+                }
+            },
+            {
+                id: "bilona-ghee",
+                name: "Vedic Bilona A2 Cow Ghee",
+                category: "ghee",
+                unit: "500 ml Glass Jar",
+                price: 1150,
+                badge: "Hand-Churned",
+                emoji: "🏺",
+                desc: "Slow-simmered golden danedar ghee made by churning whole clay-pot curd—never from cream.",
+                specs: {
+                    "Milk Ratio": "30 Litres Milk = 1 Litre Ghee",
+                    "Method": "Two-way Wooden Mathani Bilona",
+                    "Shelf Life": "12 Months (Store Cool & Dry)",
+                    "Aroma & Texture": "Rich Nutty Aroma, Granular Danedar"
+                }
+            },
+            {
+                id: "matka-dahi",
+                name: "Barsana Matka Dahi",
+                category: "milk",
+                unit: "500 g Earthen Pot",
+                price: 80,
+                badge: "Probiotic",
+                emoji: "🥣",
+                desc: "Thick, creamy curd cultured overnight in natural clay pots for authentic earthy richness.",
+                specs: {
+                    "Culture": "Heirloom Natural Probiotic Starter",
+                    "Container": "Handcrafted Terracotta Matka",
+                    "Shelf Life": "3 Days Refrigerated",
+                    "Benefits": "Gut-friendly Live Cultures"
+                }
+            },
+            {
+                id: "white-makhan",
+                name: "Churned White Makhan",
+                category: "ghee",
+                unit: "250 g Tub",
+                price: 240,
+                badge: "Kanha's Favorite",
+                emoji: "🧈",
+                desc: "Fresh, cloud-soft unsalted white butter churned at dawn using traditional wooden mathani.",
+                specs: {
+                    "Salt Content": "0% Unsalted & Unrefined",
+                    "Method": "Hand-churned from Whole Curd",
+                    "Shelf Life": "7 Days Refrigerated",
+                    "Ideal For": "Bhog Prasad, Parathas, Toddlers"
+                }
+            },
+            {
+                id: "malai-paneer",
+                name: "Fresh Farm Malai Paneer",
+                category: "sweets",
+                unit: "250 g Pack",
+                price: 130,
+                badge: "Made Daily",
+                emoji: "🧀",
+                desc: "Melt-in-mouth cottage cheese curdled naturally with lemon & whey—zero citric acid or starch.",
+                specs: {
+                    "Coagulant": "Natural Lemon & Farm Whey",
+                    "Protein": "18g Pure A2 Dairy Protein / 100g",
+                    "Shelf Life": "4 Days Refrigerated",
+                    "Texture": "Ultra-soft Malai Finish"
+                }
+            },
+            {
+                id: "barsana-peda",
+                name: "Barsana Temple Khoya Peda",
+                category: "sweets",
+                unit: "500 g Festive Box",
+                price: 420,
+                badge: "Radha Rani Prasad",
+                emoji: "🍬",
+                desc: "Traditional Braj sweet slow-cooked from fresh A2 milk khoya, green cardamom, and Mishri.",
+                specs: {
+                    "Sweetener": "Natural Dhage Wali Mishri",
+                    "Flavoring": "Freshly Ground Green Cardamom",
+                    "Shelf Life": "10 Days Refrigerated",
+                    "Purity": "Zero Refined Sugar or Maida"
+                }
+            },
+            {
+                id: "gau-seva-fodder",
+                name: "Gau Seva: Green Fodder Bundle",
+                category: "seva",
+                unit: "Feeds 5 Cows for 1 Day",
+                price: 251,
+                badge: "Sacred Seva",
+                emoji: "🌾",
+                desc: "Sponsor fresh chemical-free green fodder, jaggery, and mineral herbs for our Barsana Gaushala cows.",
+                specs: {
+                    "Impact": "Fresh Berseem, Jowar & Gud",
+                    "Confirmation": "WhatsApp Photo Update Sent",
+                    "Location": "Radha Farms Gaushala, Barsana",
+                    "Delivery": "Directly Offered at Gaushala"
+                }
+            },
+            {
+                id: "gau-seva-care",
+                name: "Gau Seva: Elder Cow Care",
+                category: "seva",
+                unit: "1 Week Complete Care",
+                price: 501,
+                badge: "Ahimsa Support",
+                emoji: "💚",
+                desc: "Supports retired senior cows like Kamdhenu with Ayurvedic nutrition, shelter, and gentle veterinary care.",
+                specs: {
+                    "Supports": "Senior Non-Milking Cows",
+                    "Includes": "Herbal Tonics & Cozy Bedding",
+                    "Confirmation": "Gratitude Certificate Included",
+                    "Location": "Radha Farms Gaushala, Barsana"
+                }
+            }
+        ];
+
+        let cart = [];
+        let activeCategory = "all";
+        let searchQuery = "";
+        let appliedPromo = null;
+
+        try {
+            const saved = localStorage.getItem("radha_farms_cart_v2");
+            if (saved) cart = JSON.parse(saved);
+        } catch (e) {
+            cart = [];
+        }
+
+        const productsGrid = document.getElementById("productsGrid");
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const productSearch = document.getElementById("productSearch");
+        const cartBackdrop = document.getElementById("cartBackdrop");
+        const cartItemsContainer = document.getElementById("cartItemsContainer");
+        const cartCountEl = document.getElementById("cartCount");
+        const cartSubtotalEl = document.getElementById("cartSubtotal");
+        const cartDeliveryEl = document.getElementById("cartDelivery");
+        const cartTotalEl = document.getElementById("cartTotal");
+        const discountRow = document.getElementById("discountRow");
+        const promoNameLabel = document.getElementById("promoNameLabel");
+        const cartDiscountEl = document.getElementById("cartDiscount");
+        const promoBox = document.getElementById("promoBox");
+        const promoInput = document.getElementById("promoInput");
+        const proceedCheckoutBtn = document.getElementById("proceedCheckoutBtn");
+        const checkoutForm = document.getElementById("checkoutForm");
+        const infoModalBackdrop = document.getElementById("infoModalBackdrop");
+        const infoModalTitle = document.getElementById("infoModalTitle");
+        const infoModalBody = document.getElementById("infoModalBody");
+        const toastEl = document.getElementById("toast");
+
+        function showToast(msg) {
+            toastEl.textContent = msg;
+            toastEl.classList.add("show");
+            clearTimeout(window.toastTimer);
+            window.toastTimer = setTimeout(() => {
+                toastEl.classList.remove("show");
+            }, 2700);
+        }
+
+        function saveCart() {
+            try {
+                localStorage.setItem("radha_farms_cart_v2", JSON.stringify(cart));
+            } catch (e) {}
+        }
+
+        function renderProducts() {
+            const filtered = PRODUCTS.filter(p => {
+                const matchCat = activeCategory === "all" || p.category === activeCategory;
+                const q = searchQuery.trim().toLowerCase();
+                const matchSearch = !q || p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q);
+                return matchCat && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                productsGrid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align:center; padding: 3rem 1rem; background: var(--white); border-radius: 18px; border: 1px solid var(--border);">
+                        <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🌿</div>
+                        <h3>No matching items found</h3>
+                        <p style="color: var(--text-muted); margin-top: 0.35rem;">Try clearing your search or switching categories.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            productsGrid.innerHTML = filtered.map(product => {
+                const inCart = cart.find(i => i.id === product.id);
+                const actionHtml = inCart
+                    ? `<div class="inline-qty">
+                            <button type="button" onclick="changeQty('${product.id}', -1)" aria-label="Decrease ${product.name}">-</button>
+                            <span>${inCart.qty}</span>
+                            <button type="button" onclick="changeQty('${product.id}', 1)" aria-label="Increase ${product.name}">+</button>
+                       </div>`
+                    : `<button type="button" class="add-btn" onclick="addToCart('${product.id}')">+ Add to Basket</button>`;
+
+                return `
+                    <article class="product-card">
+                        <div>
+                            <div class="product-visual">
+                                <span aria-hidden="true">${product.emoji}</span>
+                                <span class="product-tag">${product.badge}</span>
+                            </div>
+                            <h3>${product.name}</h3>
+                            <div class="product-meta">
+                                <span class="product-unit">${product.unit}</span>
+                                <button type="button" class="details-link" onclick="openProductDetails('${product.id}')">Details</button>
+                            </div>
+                            <p class="product-desc">${product.desc}</p>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">&#8377;${product.price.toLocaleString("en-IN")}</span>
+                            ${actionHtml}
+                        </div>
+                    </article>
+                `;
+            }).join("");
+        }
+
+        function openProductDetails(productId) {
+            const p = PRODUCTS.find(item => item.id === productId);
+            if (!p) return;
+
+            infoModalTitle.textContent = p.name;
+            const specsHtml = Object.entries(p.specs).map(([k, v]) => `
+                <li><strong>${k}</strong><span style="color: var(--text-muted); text-align: right;">${v}</span></li>
+            `).join("");
+
+            infoModalBody.innerHTML = `
+                <div style="display:flex; align-items:center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="font-size: 2.8rem; background: var(--gold-soft); width: 72px; height: 72px; border-radius: 16px; display: grid; place-items: center;">${p.emoji}</div>
+                    <div>
+                        <div style="color: var(--clay); font-weight: 700; font-size: 0.85rem;">${p.unit}</div>
+                        <div style="font-size: 1.4rem; font-weight: 700; color: var(--forest);">&#8377;${p.price.toLocaleString("en-IN")}</div>
+                    </div>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.94rem;">${p.desc}</p>
+                <ul class="spec-list">${specsHtml}</ul>
+                <button type="button" class="btn-primary" style="width: 100%;" onclick="addToCart('${p.id}'); closeInfoModal();">
+                    + Add to Basket
+                </button>
+            `;
+            infoModalBackdrop.classList.add("open");
+        }
+
+        function closeInfoModal() {
+            infoModalBackdrop.classList.remove("open");
+        }
+
+        function addToCart(productId) {
+            const product = PRODUCTS.find(p => p.id === productId);
+            if (!product) return;
+
+            const existing = cart.find(item => item.id === productId);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ id: product.id, name: product.name, price: product.price, unit: product.unit, category: product.category, qty: 1 });
+            }
+
+            saveCart();
+            updateCartUI();
+            renderProducts();
+            showToast(`Added "${product.name}" to your basket`);
+        }
+
+        function changeQty(productId, delta) {
+            const item = cart.find(i => i.id === productId);
+            if (!item) return;
+
+            item.qty += delta;
+            if (item.qty <= 0) {
+                cart = cart.filter(i => i.id !== productId);
+            }
+            saveCart();
+            updateCartUI();
+            renderProducts();
+        }
+
+        function calculateTotals() {
+            const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+            let discount = 0;
+            if (appliedPromo === "BARSANA10") {
+                discount = Math.round(subtotal * 0.10);
+            }
+            const afterDiscount = Math.max(0, subtotal - discount);
+            const hasPhysicalProduct = cart.some(i => i.category !== "seva");
+            const delivery = (!hasPhysicalProduct || afterDiscount >= 500 || subtotal === 0) ? 0 : 40;
+            const total = afterDiscount + delivery;
+            return { subtotal, discount, delivery, total };
+        }
+
+        function updateCartUI() {
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            cartCountEl.textContent = totalItems;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div style="text-align:center; padding: 3rem 1rem; color: var(--text-muted);">
+                        <div style="font-size: 2.8rem; margin-bottom: 0.6rem;">🧺</div>
+                        <p style="font-weight: 600; color: var(--forest);">Your farm basket is empty.</p>
+                        <p style="font-size:0.85rem; margin-top:0.35rem;">Add fresh A2 milk, Bilona ghee, makhan, peda, or Gau Seva.</p>
+                    </div>
+                `;
+                cartSubtotalEl.innerHTML = "&#8377;0";
+                cartDeliveryEl.innerHTML = "&#8377;0";
+                cartTotalEl.innerHTML = "&#8377;0";
+                discountRow.style.display = "none";
+                promoBox.style.display = "none";
+                proceedCheckoutBtn.style.display = "none";
+                checkoutForm.classList.remove("show");
+                return;
+            }
+
+            promoBox.style.display = "flex";
+            proceedCheckoutBtn.style.display = "inline-flex";
+
+            const { subtotal, discount, delivery, total } = calculateTotals();
+
+            cartItemsContainer.innerHTML = cart.map(item => `
+                <div class="cart-item">
+                    <div class="cart-item-info">
+                        <strong>${item.name}</strong>
+                        <span>${item.unit} &bull; &#8377;${item.price}</span>
+                    </div>
+                    <div class="qty-controls">
+                        <button type="button" class="qty-btn" onclick="changeQty('${item.id}', -1)" aria-label="Decrease quantity">-</button>
+                        <span style="min-width: 22px; text-align: center; font-weight: 700;">${item.qty}</span>
+                        <button type="button" class="qty-btn" onclick="changeQty('${item.id}', 1)" aria-label="Increase quantity">+</button>
+                    </div>
+                </div>
+            `).join("");
+
+            cartSubtotalEl.innerHTML = `&#8377;${subtotal.toLocaleString("en-IN")}`;
+            if (discount > 0) {
+                discountRow.style.display = "flex";
+                promoNameLabel.textContent = appliedPromo;
+                cartDiscountEl.innerHTML = `-&#8377;${discount.toLocaleString("en-IN")}`;
+            } else {
+                discountRow.style.display = "none";
+            }
+            cartDeliveryEl.innerHTML = delivery === 0 ? `<span style="color:var(--forest); font-weight:700;">FREE</span>` : `&#8377;${delivery}`;
+            cartTotalEl.innerHTML = `&#8377;${total.toLocaleString("en-IN")}`;
+        }
+
+        function applyPromoCode(code) {
+            const normalized = code.trim().toUpperCase();
+            if (normalized === "BARSANA10") {
+                appliedPromo = "BARSANA10";
+                promoInput.value = "BARSANA10";
+                updateCartUI();
+                showToast("Promo BARSANA10 applied (10% Off)!");
+            } else {
+                showToast("Try code BARSANA10 for 10% off");
+            }
+        }
+
+        document.getElementById("applyPromoBtn").addEventListener("click", () => {
+            applyPromoCode(promoInput.value);
+        });
+
+        document.getElementById("copyPromoBtn").addEventListener("click", () => {
+            appliedPromo = "BARSANA10";
+            promoInput.value = "BARSANA10";
+            updateCartUI();
+            showToast("BARSANA10 discount activated for your basket!");
+        });
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                filterBtns.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+                activeCategory = btn.dataset.category;
+                renderProducts();
+            });
+        });
+
+        productSearch.addEventListener("input", (e) => {
+            searchQuery = e.target.value;
+            renderProducts();
+        });
+
+        const menuToggle = document.getElementById("menuToggle");
+        const navMenu = document.getElementById("navMenu");
+        menuToggle.addEventListener("click", () => navMenu.classList.toggle("open"));
+        navMenu.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => navMenu.classList.remove("open"));
+        });
+
+        document.getElementById("openCartBtn").addEventListener("click", () => {
+            cartBackdrop.classList.add("open");
+        });
+        document.getElementById("closeCartBtn").addEventListener("click", () => {
+            cartBackdrop.classList.remove("open");
+        });
+        cartBackdrop.addEventListener("click", (e) => {
+            if (e.target === cartBackdrop) cartBackdrop.classList.remove("open");
+        });
+
+        document.getElementById("closeInfoModalBtn").addEventListener("click", closeInfoModal);
+        infoModalBackdrop.addEventListener("click", (e) => {
+            if (e.target === infoModalBackdrop) closeInfoModal();
+        });
+
+        proceedCheckoutBtn.addEventListener("click", () => {
+            checkoutForm.classList.toggle("show");
+        });
+
+        checkoutForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("chkName").value.trim();
+            const phone = document.getElementById("chkPhone").value.trim();
+            const addr = document.getElementById("chkAddr").value.trim();
+            const slot = document.getElementById("chkSlot").value;
+            const payment = document.getElementById("chkPayment").value;
+            const { total } = calculateTotals();
+            const orderId = "RF-" + Math.floor(100000 + Math.random() * 900000);
+            const itemsSummary = cart.map(i => `<li><span>${i.name} &times; ${i.qty}</span><strong>&#8377;${i.price * i.qty}</strong></li>`).join("");
+
+            cart = [];
+            appliedPromo = null;
+            promoInput.value = "";
+            saveCart();
+            updateCartUI();
+            renderProducts();
+            checkoutForm.reset();
+            cartBackdrop.classList.remove("open");
+
+            infoModalTitle.textContent = "Order Confirmed!";
+            infoModalBody.innerHTML = `
+                <div style="text-align:center; margin-bottom: 1rem;">
+                    <div style="font-size: 2.8rem;">🌾</div>
+                    <h4 style="color: var(--forest); font-size: 1.2rem; margin-top: 0.25rem;">Radhe Radhe, ${name}!</h4>
+                    <p style="color: var(--text-muted); font-size: 0.88rem;">Order <strong>${orderId}</strong> has been scheduled from Barsana.</p>
+                </div>
+                <ul class="spec-list">
+                    ${itemsSummary}
+                    <li><span>Delivery Slot</span><strong>${slot}</strong></li>
+                    <li><span>Payment Mode</span><strong>${payment}</strong></li>
+                    <li><span>Address (${phone})</span><span style="max-width:55%; text-align:right;">${addr}</span></li>
+                    <li style="font-size: 1.05rem; color: var(--forest);"><strong>Total Payable</strong><strong>&#8377;${total.toLocaleString("en-IN")}</strong></li>
+                </ul>
+                <button type="button" class="btn-primary" style="width: 100%;" onclick="closeInfoModal()">Continue Exploring</button>
+            `;
+            infoModalBackdrop.classList.add("open");
+            showToast(`Order ${orderId} confirmed!`);
+        });
+
+        const subQtyEl = document.getElementById("subQty");
+        const subFreqEl = document.getElementById("subFreq");
+        const subTotalEl = document.getElementById("subTotal");
+
+        function updateSubEstimate() {
+            const dailyRates = { "0.5": 45, "1": 85, "1.5": 125, "2": 165 };
+            const rate = dailyRates[subQtyEl.value] || 85;
+            const days = parseInt(subFreqEl.value, 10) || 30;
+            const total = rate * days;
+            subTotalEl.innerHTML = `&#8377;${total.toLocaleString("en-IN")} / mo`;
+        }
+
+        subQtyEl.addEventListener("change", updateSubEstimate);
+        subFreqEl.addEventListener("change", updateSubEstimate);
+
+        document.getElementById("subscriptionForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("subName").value.trim();
+            const qtyText = subQtyEl.options[subQtyEl.selectedIndex].text.split(" (")[0];
+            const fb = document.getElementById("subFeedback");
+            fb.style.display = "block";
+            fb.textContent = `Radhe Radhe ${name}! Your ${qtyText} morning milk plan is registered. Our Barsana coordinator will call shortly.`;
+            showToast("Milk subscription registered!");
+            e.target.reset();
+            updateSubEstimate();
+        });
+
+        document.querySelectorAll(".faq-item").forEach(item => {
+            const btn = item.querySelector(".faq-q");
+            const panel = item.querySelector(".faq-a");
+            btn.addEventListener("click", () => {
+                const isOpen = item.classList.contains("open");
+                document.querySelectorAll(".faq-item").forEach(other => {
+                    other.classList.remove("open");
+                    other.querySelector(".faq-a").style.maxHeight = null;
+                });
+                if (!isOpen) {
+                    item.classList.add("open");
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        });
+
+        document.getElementById("contactForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("cName").value.trim();
+            const topic = document.getElementById("cTopic").value;
+            const fb = document.getElementById("contactFeedback");
+            fb.style.display = "block";
+            fb.textContent = `Thank you, ${name}! Your "${topic}" inquiry has been received by our Barsana farm team.`;
+            showToast("Inquiry sent to Radha Farms!");
+            e.target.reset();
+        });
+
+        document.getElementById("newsletterForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const email = document.getElementById("newsEmail").value.trim();
+            document.getElementById("newsFeedback").textContent = `Subscribed ${email} for Radha Farms updates!`;
+            showToast("Subscribed to Radha Farms updates");
+            e.target.reset();
+        });
+
+        const siteHeader = document.getElementById("siteHeader");
+        const backTopBtn = document.getElementById("backTopBtn");
+        const navLinks = document.querySelectorAll(".nav-link");
+        const sections = document.querySelectorAll("main section[id]");
+
+        window.addEventListener("scroll", () => {
+            const y = window.scrollY;
+            siteHeader.classList.toggle("scrolled", y > 20);
+            backTopBtn.classList.toggle("show", y > 450);
+
+            let currentId = "";
+            sections.forEach(sec => {
+                if (y >= sec.offsetTop - 130) {
+                    currentId = sec.getAttribute("id");
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.toggle("active-link", link.getAttribute("href") === `#${currentId}`);
+            });
+        });
+
+        backTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08 });
+
+        document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+        renderProducts();
+        updateCartUI();
+        updateSubEstimate();
+    </script>
 </body>
 </html>
